@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liberica — Coffea Roasters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF9F5;
+    --ink:#191510;
+    --rule:#7A4A2B;
+    --panel:#EFE8DD;
+    --muted:#6E655A;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.45;
+  }
+  .wrap{
+    max-width:480px;
+    margin:0 auto;
+    padding:36px 24px 56px;
+  }
+  .wordmark{
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:22px;
+  }
+  h1{
+    font-family:'Anton',sans-serif;
+    font-weight:400;
+    font-size:44px;
+    line-height:0.98;
+    letter-spacing:0.01em;
+    margin:0 0 6px;
+    text-transform:uppercase;
+  }
+  h1 span{
+    display:block;
+    font-size:26px;
+    color:var(--rule);
+  }
+  .notes{
+    font-size:17px;
+    font-weight:500;
+    margin:14px 0 10px;
+  }
+  .meta{
+    font-size:13px;
+    color:var(--muted);
+    letter-spacing:0.03em;
+  }
+  .meta b{color:var(--ink); font-weight:600;}
+  .rule{
+    border:none;
+    border-top:2px solid var(--rule);
+    margin:28px 0;
+  }
+  section.brew{
+    margin-bottom:8px;
+  }
+  section.brew h2{
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0 0 16px;
+    font-weight:600;
+  }
+  .stat{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:14px 0;
+    border-bottom:1px solid #E2DACC;
+  }
+  .stat:last-child{border-bottom:none;}
+  .stat .label{
+    font-size:14px;
+    color:var(--muted);
+  }
+  .stat .value{
+    font-family:'Anton',sans-serif;
+    font-weight:400;
+    font-size:28px;
+    letter-spacing:0.01em;
+  }
+  .stat .value small{
+    font-family:'Inter',sans-serif;
+    font-weight:500;
+    font-size:13px;
+    color:var(--muted);
+    display:block;
+    text-align:right;
+    margin-top:2px;
+    letter-spacing:0;
+  }
+  .grind{
+    padding:14px 0 4px;
+  }
+  .grind-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding-bottom:14px;
+    border-bottom:1px solid #E2DACC;
+  }
+  .grind-head .label{
+    font-size:14px;
+    color:var(--muted);
+  }
+  .grind-head .value{
+    font-family:'Anton',sans-serif;
+    font-weight:400;
+    font-size:24px;
+    letter-spacing:0.01em;
+  }
+  .grind-head .value small{
+    font-family:'Inter',sans-serif;
+    font-weight:500;
+    font-size:12px;
+    color:var(--muted);
+    margin-left:6px;
+    letter-spacing:0;
+  }
+  .grind-table{
+    padding-top:6px;
+  }
+  .g-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:8px 0;
+  }
+  .g-name{
+    font-size:13px;
+    color:var(--muted);
+  }
+  .g-num{
+    font-size:15px;
+    font-weight:600;
+  }
+  .panel{
+    background:var(--panel);
+    padding:20px 22px;
+    margin-top:28px;
+  }
+  .panel dl{
+    margin:0;
+    display:grid;
+    grid-template-columns:1fr auto;
+    row-gap:12px;
+  }
+  .panel dt{
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--muted);
+    grid-column:1;
+  }
+  .panel dd{
+    font-size:14px;
+    margin:2px 0 0;
+    grid-column:1;
+    font-weight:500;
+  }
+  .panel .row{
+    grid-column:1 / -1;
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding-bottom:10px;
+    border-bottom:1px solid #DFD5C3;
+  }
+  .panel .row:last-child{border-bottom:none; padding-bottom:0;}
+  .panel .row .r-label{
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .panel .row .r-value{
+    font-size:14px;
+    font-weight:600;
+    text-align:right;
+  }
+  footer{
+    margin-top:32px;
+    font-size:12px;
+    color:var(--muted);
+    letter-spacing:0.06em;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="wordmark">Coffea Roasters</div>
+
+  <h1>Liberica</h1>
+
+  <div class="notes">Jackfruit, banana, caramel</div>
+  <div class="meta"><b>Natural</b> &nbsp;·&nbsp; <b>Filter</b> &nbsp;·&nbsp; 700 – 1000 masl</div>
+
+  <hr class="rule">
+
+  <section class="brew">
+    <h2>Brew guidelines</h2>
+
+    <div class="stat">
+      <span class="label">Brew ratio</span>
+      <span class="value">1 : 15</span>
+    </div>
+    <div class="stat">
+      <span class="label">Water temp</span>
+      <span class="value">90°C</span>
+    </div>
+    <div class="grind">
+      <div class="grind-head">
+        <span class="label">Grind size</span>
+        <span class="value">612 – 742<small>microns</small></span>
+      </div>
+      <div class="grind-table">
+        <div class="g-row"><span class="g-name">Comandante C40</span><span class="g-num">24 – 26</span></div>
+        <div class="g-row"><span class="g-name">Mahlkönig EK43 (16)</span><span class="g-num">5.9 – 8.1</span></div>
+        <div class="g-row"><span class="g-name">Fiorenzato Pietro</span><span class="g-num">3.5 – 4.9</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="panel">
+    <div class="row">
+      <span class="r-label">Origin</span>
+      <span class="r-value">South Upi, Maguindanao, Philippines</span>
+    </div>
+    <div class="row">
+      <span class="r-label">Screen size</span>
+      <span class="r-value">6mm</span>
+    </div>
+    <div class="row">
+      <span class="r-label">Bean color</span>
+      <span class="r-value">82 Agtron (Very Light)</span>
+    </div>
+    <div class="row">
+      <span class="r-label">Roast date</span>
+      <span class="r-value">8.20.2026</span>
+    </div>
+    <div class="row">
+      <span class="r-label">Optimal brew window</span>
+      <span class="r-value">9.4 – 9.20.2026</span>
+    </div>
+    <div class="row">
+      <span class="r-label">Net weight</span>
+      <span class="r-value">50g</span>
+    </div>
+  </div>
+
+  <footer>Coffea Roasters</footer>
+
+</div>
+</body>
+</html>
